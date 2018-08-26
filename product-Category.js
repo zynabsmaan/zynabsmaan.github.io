@@ -17,10 +17,10 @@ var data = [
     {"id": 16, "name": "abbe", "price": 6000, "new": "0", "discount": 0, "age1": "1", "age2": "1", "age3": "1"},
 
 ];
-var radioform = data.slice(0);
-var newData;
-var newData2;
-var length = 10;
+// var radioform = data.slice(0);
+// var newData;
+// var newData2;
+// var length = 10;
 
 function Product(count) {
     this.id = count;
@@ -65,8 +65,10 @@ Product.prototype.createProduct = function (productData) {
 
     }
 
-    htmlContent += "  <span class=\"badge badge-pill badge-danger my-1 mr-1\"\n" +
-        " id='" + this.productDiscount + "'>" + getData.discount + "%</span>\n";
+    if(getData.discount > 0) {
+        htmlContent += "  <span class=\"badge badge-pill badge-danger my-1 mr-1\"\n" +
+            " id='" + this.productDiscount + "'>" + getData.discount + "%</span>\n";
+    }
 
     if (getData.age1 == "1") {
         htmlContent += "<span class=\" badge badge-pill bg-pink my-1 mr-1\"\n" +
@@ -104,9 +106,9 @@ Product.prototype.createProduct = function (productData) {
 
 Product.prototype.default = function () {
 
-
-    if (radioform.length < length) {
-        length = radioform.length
+    var length = 10;
+    if (data.length < length) {
+        length = data.length
     }
 
     data.sort(function (a, b) {
@@ -117,44 +119,32 @@ Product.prototype.default = function () {
 
     $("#product_body").empty();
     for (var i = 0; i < length; i++) {
-
         var obj = new Product(data[i].id);
-        document.getElementById("product_body").innerHTML += obj.createProduct(data[i]);
-
+        $("#product_body").append(obj.createProduct(data[i]));
     }
+};
 
-    newData = data.slice(0);
-    newData2 = data.slice(0);
 
-}
 
 
 $(document).ready(function () {
 
-    document.getElementById("range1").innerText = document.getElementById("myRange1").value;
-    document.getElementById("range2").innerText = document.getElementById("myRange2").value
+    var length =10 ;
+    var newData2;
+    var newData = data.slice(0);
+    $("#range1").text($("#myRange1").val());
+    $("#range2").text($("#myRange2").val());
+
 
     var obj = new Product(0);
     obj.default();
+////////////////////////////////////////////////////////////////////////////
+    //Radio1 - name Adecesnt
+    $("#radio1").on("click", function () {
 
-    var radios = document.radios.exampleRadios;
-
-    document.getElementById(radios[0].id).onclick = function (e) {
-
-        //name ascend
-
-
-        if (radioform.length < length) {
-            length = radioform.length
+        if (data.length < length) {
+            length = data.length
         }
-
-
-
-        radioform.sort(function (a, b) {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-        });
 
         data.sort(function (a, b) {
             if (a.name < b.name) return -1;
@@ -162,101 +152,115 @@ $(document).ready(function () {
             return 0;
         });
 
+        newData.sort(function (a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+        });
+
+
         $("#product_body").empty();
+        for (var i = 0; i < length; i++) {
+            var obj = new Product(newData[i].id);
+            $("#product_body").append(obj.createProduct(newData[i]));
+        }
+    });
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        for (var i = 0; i < radioform.length; i++) {
+    $("#radio2").click(function () {
 
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
+    //name ascend
 
+        if (newData.length < length) {
+            length = newData.length
         }
 
-    };
+    data.sort(function (a, b) {
+        if (b.name < a.name) return -1;
+        if (b.name > a.name) return 1;
+        return 0;
+    });
 
-
-    document.getElementById(radios[1].id).onclick = function (e) {
-
-        //name ascend
-
-        data.sort(function (a, b) {
+        newData.sort(function (a, b) {
             if (b.name < a.name) return -1;
             if (b.name > a.name) return 1;
             return 0;
         });
 
-        radioform.sort(function (a, b) {
-            if (b.name < a.name) return -1;
-            if (b.name > a.name) return 1;
-            return 0;
-        });
-
         $("#product_body").empty();
-
-
         for (var i = 0; i < length; i++) {
-
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
+            var obj = new Product(newData[i].id);
+            $("#product_body").append(obj.createProduct(newData[i]));
         }
-    };
+    });
+
+/////////////////////////////////////////////////////////////////////////////////
 
 
-    document.getElementById(radios[2].id).onclick = function (e) {
+$("#radio3").on("click", function () {
 
-        //name ascend
-        radioform.sort(function (a, b) {
-            return a.price - b.price;
-        });
+    if (newData.length < length) {
+        length = newData.length
+    }
 
-        data.sort(function (a, b) {
-            return a.price - b.price;
-        });
+    newData.sort(function (a, b) {
+        if (b.price < a.price) return -1;
+        if (b.price > a.price) return 1;
+        return 0;
+    });
 
+    data.sort(function (a, b) {
+        if (b.price < a.price) return -1;
+        if (b.price > a.price) return 1;
+        return 0;
+    });
 
-        $("#product_body").empty();
+    $("#product_body").empty();
+    for (var i = 0; i < length; i++) {
+        var obj = new Product(newData[i].id);
+        $("#product_body").append(obj.createProduct(newData[i]));
+    }
+});
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
-        for (var i = 0; i < length; i++) {
+$("#radio4").on("click", function () {
 
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
+    if (newData.length < length) {
+        length = newData.length
+    }
+    newData.sort(function (a, b) {
+        if (a.price < b.price) return -1;
+        if (a.price > b.price) return 1;
+        return 0;
+    })
 
-        }
+    data.sort(function (a, b) {
+        if (a.price < b.price) return -1;
+        if (a.price > b.price) return 1;
+        return 0;
+    });
 
-    };
+    $("#product_body").empty();
+    for (var i = 0; i < length; i++) {
+        var obj = new Product(newData[i].id);
+       $("#product_body").append(obj.createProduct(newData[i]));
+    }
+});
 
-
-    document.getElementById(radios[3].id).onclick = function (e) {
-
-        //name ascend
-
-
-        radioform.sort(function (a, b) {
-            return b.price - a.price;
-        });
-
-        data.sort(function (a, b) {
-            return b.price - a.price;
-        });
-
-        $("#product_body").empty();
-
-
-        for (var i = 0; i < length; i++) {
-
-
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
-
-        }
-
-    };
-
-
-    document.getElementById(radios[4].id).onclick = function (e) {
+/////////////////////////////////////////////////////////////////////////
+    $("#radio5").on("click", function () {
 
         //discount up
+        if (newData.length < length) {
+            length = newData.length
+        }
+        newData.sort(function (a, b) {
+            if (a.discount < b.discount) return -1;
+            if (a.discount > b.discount) return 1;
+            return 0;
+        });
 
         data.sort(function (a, b) {
             if (a.discount < b.discount) return -1;
@@ -264,30 +268,23 @@ $(document).ready(function () {
             return 0;
         });
 
-        radioform.sort(function (a, b) {
-            if (a.discount < b.discount) return -1;
-            if (a.discount > b.discount) return 1;
-            return 0;
-        });
         $("#product_body").empty();
-
-
         for (var i = 0; i < length; i++) {
-
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
+            var obj = new Product(newData[i].id);
+            $("#product_body").append(obj.createProduct(newData[i]));
 
         }
+    });
 
-    };
-
-
-    document.getElementById(radios[5].id).onclick = function (e) {
+    //////////////////////////////////////////////////////////////////////////////////////
+    $("#radio6").on("click", function () {
 
         //discount up
+        if (newData.length < length) {
+            length = newData.length
+        }
 
-
-        radioform.sort(function (a, b) {
+        newData.sort(function (a, b) {
             if (b.discount < a.discount) return -1;
             if (b.discount > a.discount) return 1;
             return 0;
@@ -299,240 +296,176 @@ $(document).ready(function () {
             return 0;
         });
 
+    $("#product_body").empty();
+    for (var i = 0; i < length; i++) {
+        var obj = new Product(newData[i].id);
+        $("#product_body").append(obj.createProduct(newData[i]));
+    }
+});
 
-        $("#product_body").empty();
+/////////////////////////////////////////////////////////////////////
+
+$("#checks1").on("change", function () {
+
+    length = $("#number option:selected").text();
+    $("#range1").text($("#myRange1").val());
+    $("#range2").text($("#myRange2").val());
+    newData, newData2 = [];
 
 
-        for (var i = 0; i < length; i++) {
-
-
-            var obj = new Product(radioform[i].id);
-            document.getElementById("product_body").innerHTML += obj.createProduct(radioform[i]);
-
-        }
-
-
+    if (($("#check1").is(":checked") ||
+        ($("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked")) ||
+        (!$("#check1").is(":checked") && !$("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked")) ||
+        ($("#check1").is(":checked") && $("#check2").is(":checked")) ||
+        ($("#check1").is(":checked") && $("#check3").is(":checked")) ||
+        ($("#check1").is(":checked") && $("#check4").is(":checked"))) &&
+        (!$("#check5").is(":checked") && !$("#check6").is(":checked"))) {
+        console.log("all");
         newData = data.slice(0);
-        newData2 = data.slice(0);
-    };
+    }
 
 
-    //filteration
-
-
-    document.getElementById("checks1").onchange = function (e) {
-
-        //
-        // if ($("#check1").is(":checked") ||
-        //     ($("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked")) ||
-        //     (!$("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) ||
-        //     ($("#check1").is(":checked") && $("#check2").is(":checked")) ||
-        //     ($("#check1").is(":checked") && $("#check3").is(":checked")) ||
-        //     ($("#check1").is(":checked") && $("#check4").is(":checked"))) {
-        //
-        //     newData = data.slice(0);
-        //     console.log(data.length);
-        // }
-
-
-        if (($("#check1").is(":checked") ||
-            ($("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked")) ||
-            (!$("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check2").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check3").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check4").is(":checked"))) && (!$("#check5").is(":checked") && !$("#check6").is(":checked"))) {
-
-            newData = data.slice(0);
-            newData2 = data.slice(0);
-            console.log(data.length);
+    //women only
+    if ($("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("women");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].age1 == "1") {
+                newData.push(data[i])
+            }
         }
+    }
 
-
-        //women only
-
-        if ($("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
-
-                if (data[i].age1 == "1") {
-                    newData.push(data[i])
-                }
+    //Men only
+    if (!$("#check2").is(":checked") && $("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("men");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].age2 == "1") {
+                newData.push(data[i]);
 
             }
         }
+    }
 
-        //Men only
-        if (!$("#check2").is(":checked") && $("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
+    //Kids only
+    if (!$("#check2").is(":checked") && !$("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("kids");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].age3 == "1") {
 
-                if (data[i].age2 == "1") {
-                    newData.push(data[i]);
-
-                }
+                newData.push(data[i]);
             }
         }
 
-        //Kids only
-        if (!$("#check2").is(":checked") && !$("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].age3 == "1") {
-                    newData.push(data[i]);
-                }
-            }
 
-
-        }
+    }
 //Women and men
-        if ($("#check2").is(":checked") && $("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
+    if ($("#check2").is(":checked") && $("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("Women and men");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
 
-                if (data[i].age1 == 1 || data[i].age2 == 1) {
-                    newData.push(data[i]);
-                }
-            }
+            if (data[i].age1 == 1 || data[i].age2 == 1) {
 
-        }
-        //Women and kids
-        if ($("#check2").is(":checked") && !$("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
-
-                if (data[i].age1 == 1 || data[i].age3 == 1) {
-
-                    newData.push(data[i]);
-                }
+                newData.push(data[i]);
             }
         }
+
+    }
+    //Women and kids
+    if ($("#check2").is(":checked") && !$("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("Women and kids");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
+
+            if (data[i].age1 == 1 || data[i].age3 == 1) {
+
+                newData.push(data[i]);
+            }
+        }
+    }
 
 //men and kids
-        if (!$("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
-            newData = [];
-            for (var i = 0; i < data.length; i++) {
-                if (data.age2 == 1 || data[i].age3 == 1) {
-                    newData.push(data[i]);
-                }
-            }
+    if (!$("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
+        console.log("kids and men");
+        newData = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data.age2 == 1 || data[i].age3 == 1) {
 
-        }
-
-
-        var newDataform = [];
-        newData = newData.filter(value => -1 !== newData2.indexOf(value));
-
-        var l = 0;
-
-
-        $("#product_body").empty();
-        console.log(length);
-        console.log(newData.length);
-        for (var i = 0; i < newData.length; i++) {
-
-            if ( (newData[i].price >= document.getElementById("range1").innerText) &&
-                (newData[i].price <= document.getElementById("range2").innerText) && (l < length))
-               {
-                l++;
-                console.log(i, "hhhhhhhhhhhhh");
-                var obj = new Product(newData[i].id);
-                document.getElementById("product_body").innerHTML += obj.createProduct(newData[i]);
-                newDataform.push(newData[i])
-
-
+                newData.push(data[i]);
             }
         }
 
-
-        radioform = newDataform.slice(0);
-
-    };
+    }
 
 
-    document.getElementById("checks2").onchange = function (e) {
 
 
-        length = $("#number option:selected").text();
-        document.getElementById("range1").innerText = document.getElementById("myRange1").value;
-        document.getElementById("range2").innerText = document.getElementById("myRange2").value;
-
-
-        if (($("#check1").is(":checked") ||
-            ($("#check2").is(":checked") && $("#check3").is(":checked") && $("#check4").is(":checked")) ||
-            (!$("#check2").is(":checked") && !$("#check3").is(":checked") && !$("#check4").is(":checked") && !$("#check1").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check2").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check3").is(":checked")) ||
-            ($("#check1").is(":checked") && $("#check4").is(":checked"))) && (!$("#check5").is(":checked") && !$("#check6").is(":checked"))) {
-
-            newData = data.slice(0);
-            newData2 = data.slice(0);
-            console.log(data.length);
-        }else if (!$("#check5").is(":checked") && !$("#check6").is(":checked")) {
-            newData2 = data.slice(0);
-        }
 
 //new only
-        if ($("#check5").is(":checked") && !$("#check6").is(":checked")) {
-            newData2 = [];
+    if ($("#check5").is(":checked") && !$("#check6").is(":checked")) {
+        newData2 = [];
+        console.log("new");
+        for (var i = 0; i < newData.length; i++) {
 
-            for (var i = 0; i < data.length; i++) {
+            if (newData[i].new == "1") {
+                newData2.push(newData[i])
+            }
+        }
+        newData = newData2.slice(0);
+    }
 
-                if (data[i].new == "1") {
-                    newData2.push(data[i])
-                }
+
+    if (!$("#check5").is(":checked") && $("#check6").is(":checked")) {
+        console.log("discount");
+        newData2 = [];
+        for (var i = 0; i < newData.length; i++) {
+            if (newData[i].discount > 0) {
+                newData2.push(newData[i]);
             }
         }
 
+        newData = newData2.slice(0);
+    }
 
-        if (!$("#check5").is(":checked") && $("#check6").is(":checked")) {
-            newData2 = [];
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].discount > 0) {
-                    newData2.push(data[i]);
-                }
+
+    if ($("#check5").is(":checked") && $("#check6").is(":checked")) {
+        console.log("new and discount");
+        newData2 = [];
+        for (var i = 0; i < newData.length; i++) {
+
+            if (newData[i].new == "1" && newData[i].discount > 0) {
+                newData2.push(newData[i]);
             }
         }
+        newData = newData2.slice(0);
+    }
 
 
-        if ($("#check5").is(":checked") && $("#check6").is(":checked")) {
-            newData2 = [];
 
+    var l=0;
+    $("#product_body").empty();
+    console.log(length);
+    console.log(newData.length);
+    console.log($("#range1").text());
+    for (var i = 0; i < newData.length; i++) {
 
-            for (var i = 0; i < data.length; i++) {
-
-                if (data[i].new == "1" && data[i].discount > 0) {
-                    newData2.push(data[i]);
-                }
-            }
-        }
-
-        newData2 = newData.filter(value => -1 !== newData2.indexOf(value));
-       console.log(newData2.length);
-        var newdataform = [];
-        var l = 0;
-
-        $("#product_body").empty();
-        for (var i = 0; i < newData2.length; i++)
+        if ((newData[i].price >=  $("#range1").text()) &&
+            (newData[i].price <=  $("#range2").text()) && (l < length))
         {
-
-            if (((newData2[i].price >= document.getElementById("range1").innerText) &&
-                (newData2[i].price <= document.getElementById("range2").innerText)) && (l < length))
-            {
-                var obj = new Product(newData2[i].id);
-                document.getElementById("product_body").innerHTML += obj.createProduct(newData2[i]);
-                newdataform.push(newData2[i]);
-                l++;
-                console.log("kkkkkkkkkkkk",l);
-
-            }
+            l++;
+            console.log(i, "hhhhhhhhhhhhh");
+            var obj = new Product(newData[i].id);
+            $("#product_body").append(obj.createProduct(newData[i]));
         }
-        radioform = newdataform;
+    }
 
-
-
-    };
+});
 
 
 });
+
 
 
