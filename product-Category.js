@@ -450,17 +450,21 @@ $("#checks1").on("change", function () {
     console.log(length);
     console.log(newData.length);
     console.log($("#range1").text());
+    newData2 = [];
     for (var i = 0; i < newData.length; i++) {
 
         if ((newData[i].price >=  $("#range1").text()) &&
             (newData[i].price <=  $("#range2").text()) && (l < length))
         {
             l++;
+            newData2.push(newData[i]);
             console.log(i, "hhhhhhhhhhhhh");
             var obj = new Product(newData[i].id);
             $("#product_body").append(obj.createProduct(newData[i]));
         }
     }
+
+    newData = newData2.slice(0);
 
 });
 
