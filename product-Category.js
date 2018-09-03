@@ -48,7 +48,7 @@ Product.prototype.createProduct = function (productData) {
     var htmlContent = "<div class=\"col-lg-4 col-md-6 col-sm-12\" id='" + this.productId + "'>\n" +
         "\n" +
         "                        <div class=\"card mb-2\">\n" +
-        "                            <img class=\"card-img-top align-self-center\" src=\"../p1.png\" id='" + this.productImg + "'\n" +
+        "  <img class=\"card-img-top align-self-center\" src=\"images/p1.png\" id='" + this.productImg + "'\n" +
         "                                 alt=\"Card image cap\"\n" +
         "                                 style=\"position:relative;width:15vw;min-width:150px;\">\n" +
         "                            <div class=\"card-body text-center\">\n" +
