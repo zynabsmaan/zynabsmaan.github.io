@@ -14,84 +14,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="app.css">
     <style>
 
-        .hr-white {
-            color: #ffffff;
-            border-color: #ffffff;
-            background-color: #ffffff;
-        }
 
-        .hr-black {
-            color: #000000;
-            border-color: #000000;
-            background-color: #000000;
-        }
-
-        .rounded {
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-            border-radius: 100px;
-        }
-
-        .bg-pink {
-
-            background-color: #F06292;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .itemList {
-            margin-right: 15px;
-
-        }
-
-        .slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 10px;
-            border-radius: 5px;
-            background: #d3d3d3;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .1s;
-            transition: opacity .2s;
-        }
-
-        .slider:hover {
-            opacity: 1;
-        }
-
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #01579B;
-            cursor: pointer;
-        }
-
-        .slider::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #4CAF50;
-            cursor: pointer;
-        }
     </style>
 </head>
 
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
     <a class="navbar-brand" href="#">
         <img src="../v.png" width="30px" height="100%" alt="">
 
@@ -104,11 +38,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><strong>Home</strong> <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-info" href="#"><strong>Home</strong> <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <strong>Catigories</strong>
                 </a>
@@ -120,16 +54,16 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><strong>Sales</strong></a>
+                <a class="nav-link text-info" href="#"><strong>Sales</strong></a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><strong>Popular</strong></a>
+                <a class="nav-link text-info" href="#"><strong>Popular</strong></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><strong>Blog</strong></a>
+                <a class="nav-link text-info" href="#"><strong>Blog</strong></a>
             </li>
 
 
@@ -137,7 +71,7 @@
 
         <ul class="float-right navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-warning" href="#">Sign in</a>
+                <a class="nav-link text-warning" href="#"><strong>Sign in</strong></a>
             </li>
         </ul>
 
@@ -151,18 +85,22 @@
 <div class="jumbotron-fluid jumbotron bg-info mt-5">
     <div class="container ">
 
-        <div class="d-flex justify-content-between">
-            <div><h1 class="display-4">Product Categories</h1>
-                <hr class="hr-black">
+        <div class="row">
+            <div class="col-8">
+            <h1 class="display-4 text-white">Product Categories</h1>
+                <hr class="hr-white">
+                <p class="lead text-white">simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                    essentia</p>
             </div>
-            <img class="img-fluid" src="images/p1.png" style="height:100px;" alt="Responsive image">
+            <div class="col-4">
+            <img class="img-fluid col-4" src="images/p1.png" style="height:10vw;width:40vm;" alt="Responsive image">
+            </div>
         </div>
 
-        <p class="lead">simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-            essentia</p>
+
     </div>
 </div>
 
@@ -171,138 +109,117 @@
 
     <div class="row">
 
-
         <div class="col-lg-3 col-md-5 col-sm-5">
-
-            <div class="card border border-dark ">
-                <div class="card-header bg-danger text-center text-white font-weight-bold mb-3 ">
-                    SORTING
+            <div class="card border border-info mb-2 border-hover ">
+                <div class="card-header text-center bg-white text-info mb-3 display-6">
+                    <strong>SORTING</strong>
                 </div>
                 <form action="" name="radios">
                     <div class="form-check ml-3">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio1"
                                value="option1" checked>
-                        <label class="form-check-label" for="radio1">
-                            <span class="fa fa-arrow-down mr-2"></span> Names Adsce
+                        <label class="form-check-label display-9" for="radio1" id="radio1-label">
+                            <span class="fa fa-arrow-down mr-2 text-info"></span> Names Adsce
                         </label>
                     </div>
                     <div class="form-check  ml-3">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio2"
                                value="option2">
-                        <label class="form-check-label" for="radio2">
-                            <span class="fa fa-arrow-up mr-2"></span> Names Desced
+                        <label class="form-check-label display-9" for="radio2" id="radio2-label">
+                            <span class="fa fa-arrow-up mr-2 text-info"></span> Names Desced
                         </label>
                     </div>
                     <div class="form-check  ml-3">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio3"
                                value="option3">
-                        <label class="form-check-label" for="radio3">
-                            <span class="fa fa-arrow-down mr-2"></span> Prices Adesc
+                        <label class="form-check-label display-9" for="radio3" id="radio3-label">
+                            <span class="fa fa-arrow-down mr-2 text-info"></span> Prices Adesc
                         </label>
                     </div>
                     <div class="form-check  ml-3">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio4"
                                value="option4">
-                        <label class="form-check-label" for="radio4">
-                            <span class="fa fa-arrow-up mr-2"></span> Prices Desce
+                        <label class="form-check-label display-9" for="radio4" id="radio4-label">
+                            <span class="fa fa-arrow-up mr-2 text-info"></span> Prices Desce
                         </label>
                     </div>
 
                     <div class="form-check  ml-3">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio5"
                                value="option5">
-                        <label class="form-check-label" for="radio5">
-                            <span class="fa fa-arrow-down mr-2"></span> Discount Adesc
+                        <label class="form-check-label display-9" for="radio5" id="radio5-label">
+                            <span class="fa fa-arrow-down mr-2 text-info"></span> Discount Adesc
                         </label>
                     </div>
 
-                    <div class="form-check  ml-3">
+                    <div class="form-check  ml-3 mb-2">
                         <input class="form-check-input" type="radio" name="exampleRadios" id="radio6"
                                value="option6">
-                        <label class="form-check-label" for="radio6">
-                            <span class="fa fa-arrow-up mr-2"></span> Discount Desce
+                        <label class="form-check-label display-9" for="radio6" id="radio6-label">
+                            <span class="fa fa-arrow-up mr-2 text-info"></span> Discount Desce
                         </label>
                     </div>
 
-                    <div class="form-check  ml-3">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio7"
-                               value="option7">
-                        <label class="form-check-label" for="radio7">
-                            <span class="fa fa-arrow-down mr-2"></span> Sales Adesc
-                        </label>
-                    </div>
-
-                    <div class="form-check  ml-3 mb-3">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="radio8"
-                               value="option8">
-                        <label class="form-check-label" for="radio8">
-                            <span class="fa fa-arrow-up mr-2"></span> Sales Deces
-                        </label>
-                    </div>
 
                 </form>
             </div>
 
 
-            <div class="card border border-dark">
-                <div class="card-header bg-info text-center text-white font-weight-bold mb-3 ">
-                    FILTER
+            <div class="card border border-info">
+                <div class="card-header bg-white text-center text-info  mb-3 display-6 ">
+                    <strong>FILTER</strong>
                 </div>
                 <form id="checks1">
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check1">
-                        <label class="form-check-label " for="check1">All ages</label>
+                        <label class="form-check-label display-9" for="check1" id="check1-label">All ages</label>
                     </div>
 
 
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check2">
-                        <label class="form-check-label " for="check2">Women</label>
+                        <label class="form-check-label display-9" for="check2" id="check2-label">Women</label>
                     </div>
 
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check3">
-                        <label class="form-check-label " for="check3">Men</label>
+                        <label class="form-check-label display-9 " for="check3" id="check3-label">Men</label>
                     </div>
 
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check4">
-                        <label class="form-check-label " for="check4">Kids</label>
+                        <label class="form-check-label display-9 " for="check4" id="check4-label">Kids</label>
                     </div>
 
                     <hr class="hr-black">
-
-
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check5">
-                        <label class="form-check-label " for="check5">New only</label>
+                        <label class="form-check-label display-9" for="check5" id="check5-label">New only</label>
                     </div>
 
 
                     <div class="form-check ml-3">
                         <input type="checkbox" class="form-check-input" id="check6">
-                        <label class="form-check-label " for="check6">With discount only</label>
+                        <label class="form-check-label display-9" for="check6" id="check6-label">With discount only</label>
                     </div>
 
-
                     <hr class="hr-black">
-
                     <div class="row">
                         <div class="col-11">
                             <div class="from-group ml-3">
 
 
-                                <div> From price</div>
-                                <input type="range" min="1" max="6000" value="50" class="slider" id="myRange1">
-                                <p>Value: <span id="range1"></span></p>
+                                <div class="display-9"> From price</div>
+                                <input type="range" min="1" max="6000" value="50" class="slider display-9" id="myRange1">
+                                <p class="display-9">Value: <strong><span id="range1"></span></strong></p>
                             </div>
                         </div>
                         <div class="col-11">
                             <div class="from-group ml-3">
 
-                                <div> To price</div>
-                                <input type="range" min="1" max="6000" value="6000" class="slider" id="myRange2">
-                                <p>Value: <span id="range2"></span></p>
+                                <div class="display-9"> To price</div>
+                                <input type="range" min="1" max="6000" value="6000" class="slider display-9" id="myRange2">
+                                <p class="display-9">Value: <strong><span id="range2"></span></strong></p>
                             </div>
 
                         </div>
@@ -310,12 +227,12 @@
 
                     <hr class="hr-black">
 
-                    <div class="form-group ml-3" id="number">
+                    <div class="form-group ml-3 mr-3" id="number">
                         <div class="row">
-                            <div class="col-7">
-                                <label for="num-of-product">Number of product per pages</label>
+                            <div class="col-6">
+                                <label for="num-of-product" class="display-9">Number of product per pages</label>
                             </div>
-                            <div class="col-4">
+                            <div class="col-5">
                                 <select class="form-control" id="num-of-product">
                                     <option>5</option>
                                     <option>7</option>
@@ -370,15 +287,14 @@
 
 
 
-<footer class="jumbotron-fluid jumbotron bg-dark mt-4">
+<footer class="jumbotron-fluid jumbotron bg-light">
     <div class="container">
-        <div class="row d-flex justify-content-around align-self-center text-light ">
+        <div class="row align-self-center text-secondary ">
 
             <div class="col-lg-3">
-
                 <div>
                     <p class="font-weight-bold">Quick links</p>
-                    <hr class="hr-white">
+                    <hr class="hr-black">
                 </div>
                 <ul>
                     <li><span class="fa fa-caret-right itemList "></span><a href="#">About us</a></li>
@@ -394,7 +310,7 @@
             <div class="col-lg-3 ">
                 <div>
                     <p class="font-weight-bold">Contacts</p>
-                    <hr class="hr-white">
+                    <hr class="hr-black">
                 </div>
                 <ul>
                     <li><span class="fa fa-picture-o itemList "></span> About us Contrary to popular belief, Lorem Ipsum
@@ -408,9 +324,9 @@
             <div class="col-lg-6">
                 <div>
                     <p class="font-weight-bold">Location</p>
-                    <hr class="hr-white">
+                    <hr class="hr-black">
                 </div>
-                <img src="images/map.jpg" class="img-fluid mt-2" style="height:150px;width:100%">
+                <img src="images/map.jpg" class="img-fluid  mb-2" style="height:150px;width:100%">
             </div>
         </div>
 
@@ -428,7 +344,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
-<script src="app.js"></script>
 <script src="product-Category.js"></script>
 </body>
 </html>
