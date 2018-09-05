@@ -211,17 +211,20 @@ $(document).ready(function () {
             length = newData.length
         }
 
+
         newData.sort(function (a, b) {
-            if (b.price < a.price) return -1;
-            if (b.price > a.price) return 1;
+            if (a.price < b.price) return -1;
+            if (a.price > b.price) return 1;
+            return 0;
+        })
+
+        data.sort(function (a, b) {
+            if (a.price < b.price) return -1;
+            if (a.price > b.price) return 1;
             return 0;
         });
 
-        data.sort(function (a, b) {
-            if (b.price < a.price) return -1;
-            if (b.price > a.price) return 1;
-            return 0;
-        });
+
 
         $("#product_body").empty();
         for (var i = 0; i < length; i++) {
@@ -240,15 +243,16 @@ $(document).ready(function () {
         if (newData.length < length) {
             length = newData.length
         }
+
         newData.sort(function (a, b) {
-            if (a.price < b.price) return -1;
-            if (a.price > b.price) return 1;
+            if (b.price < a.price) return -1;
+            if (b.price > a.price) return 1;
             return 0;
-        })
+        });
 
         data.sort(function (a, b) {
-            if (a.price < b.price) return -1;
-            if (a.price > b.price) return 1;
+            if (b.price < a.price) return -1;
+            if (b.price > a.price) return 1;
             return 0;
         });
 
@@ -407,7 +411,7 @@ $(document).ready(function () {
 
         //Kids only
         if (!$("#check2").is(":checked") && !$("#check3").is(":checked") && $("#check4").is(":checked") && !$("#check1").is(":checked")) {
-           
+
             console.log("kids");
             newData = [];
             for (var i = 0; i < data.length; i++) {
