@@ -112,5 +112,29 @@ ul {
 
 .thick {
     font-weight: bold;
-    color:  #757575 !important; ;
+    color: #757575 !important;;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-item
+{
+
+    color: black !important;
+}
+
+.list-group-item:hover
+{
+    background-color: #1e7e34;
+    color: white !important;
+    box-shadow: 0 0 6px 6px #ccc !important;
+
+}
+
+.border-hover:hover {
+    padding-left: 40px !important;
+    transition: all ease-out 0ms;
 }
