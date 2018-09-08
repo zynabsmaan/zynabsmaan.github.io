@@ -1,4 +1,4 @@
-var data = [
+var d = [
     {"id": 0, "name": "Cat0", "img":"images/Placeholder.png"},
     {"id": 1, "name": "Cat1", "img":"images/Placeholder.png"},
     {"id": 2, "name": "Cat2", "img":"images/Placeholder.png"},
@@ -31,10 +31,10 @@ function Category(catId)
 
 Category.prototype.CreateCategory = function () {
 
-    this.htmlContent = "<div class=\"col-lg-4 col-md-4 col-sm-6 col-6\"><div class=\"card shadow card-shadow mb-2\">\n" +
-        "                        <img class=\"card-img\" src='"+data[this.id].img +"' alt=\"Card image\" id='"+this.categoryImage +"'>\n" +
+    this.htmlContent = "<div class=\"col-lg-3 col-md-3 col-sm-6 col-6\"><div class=\"card shadow card-shadow mb-2\">\n" +
+        "                        <img class=\"card-img\" src='"+d[this.id].img +"' alt=\"Card image\" id='"+this.categoryImage +"'>\n" +
         "                        <div class=\"card-img-overlay\">\n" +
-        "                            <span class=\"card-title text-center display-6\" id='"+this.categoryName+"'>"+data[this.id].name+"</span>\n" +
+        "                            <span class=\"card-title text-center display-6\" id='"+this.categoryName+"'>"+d[this.id].name+"</span>\n" +
         "                        </div>\n" +
         "                    </div> </div>";
 
@@ -46,7 +46,7 @@ Category.prototype.CreateCategory = function () {
 $(document).ready(function () {
 
     $("#Categories").empty();
-    for(var i=1; i<9;i++)
+    for(var i=0; i<9;i++)
     {
         var cat = new Category(i);
         document.getElementById("Categories").innerHTML += cat.CreateCategory();

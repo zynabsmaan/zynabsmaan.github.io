@@ -19,7 +19,7 @@ var dataoriginal = [
 
 ];
 
-
+var totalPrice =0;
 function Product(count) {
     this.id = count;
     this.productId = "product_" + this.id;
@@ -165,6 +165,9 @@ Product.prototype.default = function()
     }
 
 
+    $("#pricelabel").addClass("thick");
+
+
 };
 
 
@@ -202,6 +205,9 @@ $(document).ready(function () {
                   "   <span class=\"badge badge-pill bg-danger ml-2\">"+dataCopy[i].price+"<i class=\"fa fa-dollar \"></i></span></a>";
 
           }
+
+          $("#pricelabel").addClass("thick");
+          $("#saleslabel, #namelabel").removeClass("thick");
       });
 
 
@@ -231,6 +237,10 @@ $(document).ready(function () {
                   "   <span class=\"badge badge-pill bg-danger ml-2\">"+dataCopy[i].price+"<i class=\"fa fa-dollar \"></i></span></a>";
 
           }
+
+          $("#saleslabel").addClass("thick");
+          $("#pricelabel, #namelabel").removeClass("thick");
+
       });
 
 
@@ -262,6 +272,10 @@ $(document).ready(function () {
                   "   <span class=\"badge badge-pill bg-danger ml-2\">"+dataCopy[i].price+"<i class=\"fa fa-dollar \"></i></span></a>";
 
           }
+
+          $("#namelabel").addClass("thick");
+          $("#saleslabel, #pricelabel").removeClass("thick");
+
       });
 
   });
@@ -293,6 +307,9 @@ function Sort() {
                 dataCopy[i].name + "\n" +
                 "   <span class=\"badge badge-pill bg-danger ml-2\">" + dataCopy[i].price + "<i class=\"fa fa-dollar \"></i></span></a>";
         }
+
+        $("#pricelabel").addClass("thick");
+        $("#saleslabel, #namelabel").removeClass("thick");
     }
 
     if ($('#ordersales').is(':checked')) {
@@ -318,6 +335,9 @@ function Sort() {
                 "   <span class=\"badge badge-pill bg-danger ml-2\">" + dataCopy[i].price + "<i class=\"fa fa-dollar \"></i></span></a>";
 
         }
+
+        $("#saleslabel").addClass("thick");
+        $("#pricelabel, #namelabel").removeClass("thick");
 
     }
 
@@ -348,6 +368,9 @@ function Sort() {
                 "   <span class=\"badge badge-pill bg-danger ml-2\">"+dataCopy[i].price+"<i class=\"fa fa-dollar \"></i></span></a>";
 
         }
+
+        $("#namelabel").addClass("thick");
+        $("#saleslabel, #pricelabel").removeClass("thick");
 
     }
 }
@@ -381,7 +404,9 @@ function searchSet(id, s) {
         if(dataoriginal[i].id == id)
         {
             dataoriginal[i].sales += parseInt(s);
-            alert(dataoriginal[i].sales);
+           totalPrice +=  dataoriginal[i].price *parseInt(s);
+           console.log("Now the total price is: ", totalPrice);
+
             break;
         }
     }
