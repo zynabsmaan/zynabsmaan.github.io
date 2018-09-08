@@ -133,7 +133,7 @@
 
         <div class="col-lg-5 col-md-5 col-sm-12 col-12">
 
-            <div class="card">
+            <div class="card shadow card-shadow">
                 <img class="card-img-top" src="images\Placeholder.png" alt="Card image cap" height="200px;">
                 <div class="card-img-overlay">
                     <h3 class="card-title text-center"><span class="badge badge-pill bg-danger text-white">New</span>
@@ -142,7 +142,7 @@
                 <div class=" card-body text-center">
                     <p class="card-text text-truncate">Some quick example text to build on the card title and make up
                         the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-success mr-1 ml-1">Shop now</a>
+                    <button type="button" class="btn btn-md btn-success text-white" role="button" onclick="alert('jjjjjjjj');">Shop now</button>
 
                 </div>
             </div>
@@ -152,7 +152,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-7 col-12">
 
-            <div class="card">
+            <div class="card shadow card-shadow">
                 <img class="card-img-top" src="images\Placeholder.png" alt="Card image cap" height="200px;">
                 <div class="card-img-overlay">
                     <h3 class="card-title text-center"><span class="badge badge-pill bg-danger text-white">New</span>
@@ -161,7 +161,7 @@
                 <div class="card-body text-center">
                     <p class="card-text text-truncate">Some quick example text to build on the card title and make up
                         the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-md btn-success">Shop now</button>
+                    <button type="button" class="btn btn-md btn-success text-white" role="button" onclick="alert('jjjjjjjj');">Shop now</button>
                 </div>
             </div>
 
@@ -170,7 +170,7 @@
 
         <div class="col-lg-3 col-md-3 col-sm-5 col-12">
 
-            <div class="card">
+            <div class="card shadow card-shadow">
                 <img class="card-img-top" src="images\Placeholder.png" alt="Card image cap" height="200px;">
                 <div class="card-img-overlay">
                     <h3 class="card-title text-center"><span class="badge badge-pill bg-danger text-white">New</span>
@@ -179,8 +179,7 @@
                 <div class="card-body text-center">
                     <p class="card-text text-truncate">Some quick example text to build on the card title and make up
                         the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-md btn-success">Shop now</button>
-
+                    <button type="button" class="btn btn-md btn-success text-white" role="button" onclick="alert('jjjjjjjj');">Shop now</button>
                 </div>
             </div>
 
@@ -264,24 +263,18 @@
                 <div class="card-header bg-white text-center text-success display-6 ">
                     <strong>Top Sales</strong>
                 </div>
-                <a href="#1" class="list-group-item list-group-item-action display-9 rounded border-hover"> <i
-                        class="fa fa-caret-right mr-2"></i>product1<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
-                <a href="#1" class="list-group-item list-group-item-action display-9  rounded border-hover"> <i
-                        class="fa fa-caret-right mr-2"></i>product2<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
-                <a href="#1" class="list-group-item list-group-item-action display-9  rounded border-hover"><i
-                        class="fa fa-caret-right mr-2"></i>product3<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
-                <a href="#1" class="list-group-item list-group-item-action display-9  rounded border-hover"> <i
-                        class="fa fa-caret-right mr-2"></i>product4<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
-                <a href="#1" class="list-group-item list-group-item-action display-9  rounded border-hover"> <i
-                        class="fa fa-caret-right mr-2"></i>product5<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
-                <a href="#1" class="list-group-item list-group-item-action display-9  rounded border-hover"><i
-                        class="fa fa-caret-right mr-2"></i>product6<span class="badge badge-pill bg-danger ml-2">999
-                            <i class="fa fa-dollar "></i></span></a>
+                <a href="product.html" class="list-group-item list-group-item-action display-9 rounded border-hover" id="productTopSales-1"></a>
+
+                <a href="product.html" class="list-group-item list-group-item-action display-9  rounded border-hover" id="productTopSales-2">
+                        </a>
+                <a href="product.html" class="list-group-item list-group-item-action display-9  rounded border-hover" id="productTopSales-3">
+                         </a>
+                <a href="product.html" class="list-group-item list-group-item-action display-9  rounded border-hover" id="productTopSales-4">
+                         </a>
+                <a href="product.html" class="list-group-item list-group-item-action display-9  rounded border-hover" id="productTopSales-5">
+                         </a>
+                <a href="product.html" class="list-group-item list-group-item-action display-9  rounded border-hover" id="productTopSales-6">
+                         </a>
 
                 <div class="card-footer">
                     <a href="#1" class="card-text text-center">show more</a>
@@ -292,9 +285,9 @@
         </div>
 
         <div class="col-lg-9 col-md-7">
-            <div class="row">
+            <div class="text-success py-1 text-center display-6 border border-success mb-5">Top sales</div>
+            <div class="row" id="products-area">
                 <div class="col-lg-12">
-                    <div class="text-success py-1 text-center display-6 border border-success mb-5">Top sales</div>
 
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
@@ -364,7 +357,7 @@ bbb
 
              <div class="card">
                  <div class="card-body text-center px-0">
-                     <form  action="">
+                     <form  action="" id="myRadiosOrder">
                          <div class="form-check form-check-inline" name="myRadios">
                              <input type="radio" id="orderprice" name ="r" class="form-check-input" value="option1" checked>
                              <label class="form-check-label" for="orderprice" >Price</label>
@@ -407,5 +400,6 @@ bbb
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
 <script src="category.js"></script>
+<script src="product.js"></script>
 </body>
 </html>
