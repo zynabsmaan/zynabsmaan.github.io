@@ -15,7 +15,7 @@ var dataoriginal = [
     {"id": 13, "name": "abe", "price": 6000, "new": "0", "discount": 30, "age1": "1", "age2": "1", "age3": "1", "sales":10},
     {"id": 14, "name": "ooo", "price": 1220, "new": "1", "discount": 40, "age1": "0", "age2": "0", "age3": "1", "sales":15},
     {"id": 15, "name": "ffbf", "price": 1400, "new": "1", "discount": 11, "age1": "1", "age2": "1", "age3": "0", "sales":44},
-    {"id": 16, "name": "abbe", "price": 6000, "new": "0", "discount": 0, "age1": "1", "age2": "1", "age3": "1", "sales":50},
+    {"id": 16, "name": "abbbbbbb bbbbbbbe bbbbbbbb", "price": 6000, "new": "0", "discount": 0, "age1": "1", "age2": "1", "age3": "1", "sales":50},
 
 ];
 
@@ -48,15 +48,15 @@ Product.prototype.CreateHtml = function (data) {
 
     this.htmlContent = " <div class=\"col-lg-4 col-md-6 col-sm-6 col-12\">\n" +
         "\n" +
-        "                    <div class=\"card mb-4 shadow card-shadow\" id='"+this.productId +"'>\n" +
+        "                    <div class=\"card mb-4 shadow card-shadow border-purple\" id='"+this.productId +"'>\n" +
         "                        <img class=\"card-img-top align-self-center\" src=\"images/Placeholder.png\" id='" +this.productImg+ "'\n" +
-        "                             alt=\"Card image cap\" style=\"position:relative;width:15vw;min-width:150px;\">\n";
+        "                             alt=\"Card image cap\" style=\"position:relative;width:100%;height: 250px;\">\n";
 
     if (data.new == 1)
     {
         this.htmlContent +=   "<div class=\"card-img-overlay\">\n" +
             "                            <div class=\"card-title text-center\">\n" +
-            "                                <span class=\"badge badge-pill bg-danger font-weight-bold text-white display-9\">New</span>\n" +
+            "                               <h3> <span class=\"badge badge-pill bg-danger font-weight-bold text-white \">New</span></h3>\n" +
             "                            </div>\n" +
             "                        </div>\n";
     }
@@ -64,9 +64,9 @@ Product.prototype.CreateHtml = function (data) {
 
         this.htmlContent += "                        <div class=\"card-body text-center\">\n" +
         "                            <h5 class=\"card-title\">\n" +
-        "                                <span class=\"text-uppercase font-weight-bold mb-2 d-block\" id='"+this.productName+"'>\n" +
+        "                                <span class=\"text-uppercase font-weight-bold mb-2 d-block text-truncate\" id='"+this.productName+"'>\n" +
         data.name +"</span>\n" +
-        "                                <span class=\" badge badge-pill badge-success my-1 mr-1\" id='"+this.productPrice+"'>\n" +
+        "                               <div> <span class=\" badge badge-pill badge-success my-1 mr-1\" id='"+this.productPrice+"'>\n" +
         "                                    <i class=\"fa fa-dollar mr-2\"></i>"+data.price +"</span>\n" +
         "\n" ;
             if(data.discount >0)
@@ -75,11 +75,12 @@ Product.prototype.CreateHtml = function (data) {
                     "                                    <i class=\"fa fa-arrow-circle-down mr-2\"></i> "+data.discount+"</span>\n";
             }
 
-      this.htmlContent+=  "<span class=\"badge badge-pill badge-info my-1 mr-1\" id='"+this.productSales+"'>#"+data.sales+"</span>\n";
+      this.htmlContent+=  "<span class=\"badge badge-pill badge-info my-1 mr-1\" id='"+this.productSales+"'>#"+data.sales+"</span></div><div>\n";
             if(data.age1 == 1)
             {
                 this.htmlContent +=    "<span class=\" badge badge-pill bg-pink my-1 mr-1\" id='"+this.productAge1+"'>Women</span>\n";
             }
+
 
     if(data.age2==1)
     {
@@ -92,34 +93,30 @@ Product.prototype.CreateHtml = function (data) {
     }
 
 
-      this.htmlContent+=  "                            </h5>\n" +
+      this.htmlContent+=  "                           </div> </h5>\n" +
         "                            <p class=\"card-text text-truncate\" id=\"product_2-text\">Contrary to popular belief, Lorem\n" +
         "                                Ipsum is not simply\n" +
         "                                random text. It has roots\n" +
         "                                in</p>\n" +
-        "                            <div class=\"row\">\n" +
-        "                                <div class=\"col-lg-7 col-md-12 col-sm-12 col-12\">\n" +
-        "                                    <button type=\"button\" href=\"#11\" class=\"btn btn-info text-white btn-sm w-100 px-0 m-1\" role=\"button\" onclick='alert(\"No Compare\");' id='"+this.btnAddToCart+"'>Add to compare</button>\n" +
-        "                                </div>\n" +
-        "                                <div class=\"col-lg-5 col-md-12 col-sm-12 col-12\" >\n" +
-        "                                    <a  href=\"product.html\" class=\"btn btn-light mr-3 btn-sm w-100 mx-1 m-1\"   id='"+this.btnDetails+"'>Details</a>\n" +
-        "\n" +
-        "                                </div>\n" +
-        "                            </div>\n" +
-        "                            <form class=\".form\">\n" +
-        "                                <div class=\"row\">\n" +
-        "                                    <div class=\"col-lg-6 col-6 col-md-12 col-sm-12\">\n" +
+        "                        <div class=\"btn-toolbar mb-2 d-flex justify-content-center \" role=\"toolbar\" aria-label=\"Toolbar with button groups\">      <div class=\"btn-group \" role=\"group\" aria-label=\"First group\">\n" +
+
+        "                                    <button type=\"button\" href=\"#11\" class=\"btn btn-info text-white btn-sm rounded mr-2 \" role=\"button\" onclick='alert(\"No Compare\");' id='"+this.btnAddToCart+"'>Add to compare</button></div>\n" +
+
+        "                             <div class=\"btn-group \" role=\"group\" aria-label=\"First group\">        <a href=\"product.html\" class=\"btn btn-light btn-sm rounded\"   id='"+this.btnDetails+"'>Details</a>\n" +
+
+        "                      </div>      </div>\n" +
+
+        "  <div class=\"btn-toolbar mb-2 d-flex justify-content-center \" role=\"toolbar\" aria-label=\"Toolbar with button groups\"> <div class=\"input-group\">\n" +
         "                                        <label for='"+this.productSaleInput+"' class=\"sr-only \">qulaliy</label>\n" +
-        "                                        <input type=\"text\" id='"+this.productSaleInput+"' class=\"form-control m-1\"\n" +
-        "                                               aria-describedby=\"inputGroup-sizing-sm\" aria-label=\"Small\">\n" +
+        "                                        <input type=\"text\" id='"+this.productSaleInput+"' class=\"form-control mr-2\"\n" +
+        "                                            maxlength=\"3\" size=\"3\"  >\n" +
         "                                    </div>\n" +
-        "\n" +
-        "                                <div class=\"col-lg-6 col-6 col-md-12 col-sm-12\">\n" +
-        "                                    <button type=\"button\" class=\"btn btn-success btn-sm w-100 mx-1 m-1\" id='"+this.btnSubmitSales+"' onclick='onclickSubmit(this)'>Add to cart\n" +
+
+        "                             <div class=\"btn-group \" role=\"group\" aria-label=\"Second group\">\n" +
+        "                                    <button type=\"button\" class=\"btn btn-success btn-sm rounded\" id='"+this.btnSubmitSales+"' onclick='onclickSubmit(this)'>Add to cart\n" +
         "                                    </button>\n" +
         "                                </div>\n" +
-        "                                </div>\n" +
-        "                            </form>\n" +
+          "                        </div>\n" +
         "                        </div>\n" +
         "                    </div>\n" +
         "                </div>";
@@ -158,9 +155,10 @@ Product.prototype.default = function()
     //top salses list
     for(var i=0; i<6; i++)
     {
+        console.log("gggggg");
         document.getElementById("productTopSales-" + (i+1)).innerHTML = "<i class=\"fa fa-caret-right mr-2\"></i>\n" +
-            dataCopy[i].name +"\n" +
-            "   <span class=\"badge badge-pill bg-danger ml-2\">"+dataCopy[i].price+"<i class=\"fa fa-dollar \"></i></span></a>";
+             dataCopy[i].name+"\n" +
+            "   <span class=\"badge badge-pill text-white-important bg-danger ml-2 display-9\">"+dataCopy[i].price+"<i class=\"fa fa-dollar ml-2 \"></i></span></a>";
 
     }
 

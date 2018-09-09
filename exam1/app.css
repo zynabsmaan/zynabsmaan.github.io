@@ -78,6 +78,18 @@ ul {
     line-height: 1.2
 }
 
+.display-7 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+.display-8 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
 .display-9 {
     font-size: 1.1rem;
     font-weight: 300;
@@ -117,7 +129,7 @@ ul {
 
 a:link {
     text-decoration: none;
-    color: black;
+
 }
 
 .list-group-item
@@ -128,13 +140,57 @@ a:link {
 
 .list-group-item:hover
 {
-    background-color: #1e7e34;
-    color: white !important;
-    box-shadow: 0 0 6px 6px #ccc !important;
+
+    color: purple !important;
+    box-shadow: 0 0 6px 6px #d3d3d3 !important;
+    font-weight: bold;
+    background-color: white;
 
 }
 
 .border-hover:hover {
     padding-left: 40px !important;
     transition: all ease-out 0ms;
+}
+
+.text-purple
+{
+    color: purple !important;
+}
+
+.bg-transparent
+{
+    background-color: white !important;
+    opacity: .8 !important;
+
+}
+
+.border-purple
+{
+    border-color: purple!important;
+}
+
+
+.img-transparent
+{
+    opacity: .7;
+}
+
+
+.text-white-important
+{
+    color: white !important;
+}
+
+
+.div-border {
+
+    border-style: solid;
+    border-width: 1px;
+
+}
+.menuHover:hover
+{
+     color: white !important;
+    background-color: purple !important;
 }
