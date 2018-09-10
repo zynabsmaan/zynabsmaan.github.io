@@ -194,3 +194,19 @@ a:link {
      color: white !important;
     background-color: purple !important;
 }
+
+.mt-50
+{
+    margin-top: 240px;
+}
+
+.z-indx
+{
+    z-index: 20;
+}
+
+.center-block
+{
+    margin-right: auto;
+    margin-right: auto;
+}
