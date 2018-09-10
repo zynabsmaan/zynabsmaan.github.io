@@ -197,7 +197,7 @@ a:link {
 
 .mt-50
 {
-    margin-top: 240px;
+    margin-top: 220px;
 }
 
 .z-indx
@@ -209,4 +209,12 @@ a:link {
 {
     margin-right: auto;
     margin-right: auto;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .mt-50
+    {
+        margin-top: 250px;
+    }
 }
