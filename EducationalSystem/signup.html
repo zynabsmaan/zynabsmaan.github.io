@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Sign up</title>
+    <!-- base href="http://localhost:8080/" -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_token" content="9n3hfoII8vMtBng8crQ7I2S3AO990wVCKyDYEkaQ">
+    <link rel="stylesheet" type="text/css" href="signup_files/normalize.css">
+    <link rel="stylesheet" href="signup_files/bootstrap.css">
+    <link rel="stylesheet" href="signup_files/animate.css">
+    <link href="signup_files/css.css" rel="stylesheet">
+    <!--for social buttons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="signup_files/app.css">
+    <link rel="stylesheet" href="signup_files/log-in-up.css">
+</head>
+<body>
+
+    <div class="container-fluid bg">
+        <div class="row h-100 d-flex justify-content-center align-items-center align-middle ">
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12">
+
+                <div class="card round shadow bg-white bg-transparent p-4">
+                    <div class="card-title text-center display-5 text-primary font-weight-bold">SIGN UP</div>
+                    <div class="card-body">
+
+                        <div>
+                                                    </div>
+
+                        <form action="Ehome.html" method="post" id="signupForm">
+                            <input type="hidden" name="_token" value="9n3hfoII8vMtBng8crQ7I2S3AO990wVCKyDYEkaQ">                            <div class="row">
+                                <div class="col">
+                                    <label for="first-name-signup" class="sr-only">First name</label>
+                                    <input type="text" class="form-control font-weight-bold" id="first-name-signup" aria-describedby="first-name-help-signup" maxlength="100" name="first-name-signup" placeholder="Ex. Join">
+                                    <small id="first-name-help-signup" class=" text-danger font-weight-bold"></small>
+                                </div>
+
+                                <div class="col">
+                                    <label for="last-name-signup" class="sr-only">Last name</label>
+                                    <input type="text" class="form-control font-weight-bold" id="last-name-signup" aria-describedby="last-name-help-signup" maxlength="100" name="last-name-signup" placeholder="Ex. Smith">
+                                    <small id="last-name-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-3">
+                                <label for="username-signup" class="font-weight-bold text-primary display-8 col-lg-3 col-md-4 col-sm-12">Username</label>
+                                <div class="col-lg-9 col-md-8 col-sm-13">
+                                    <input type="text" class="form-control font-weight-bold" id="username-signup" aria-describedby="username-help-signup" maxlength="100" name="username-signup" placeholder="Ex. joinsmith1254">
+                                    <span class="fa fa-spinner animated rotateout" id="username-load" style="display: none;"></span>
+                                    <small id="username-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mt-3">
+                                <label for="gender-signup" class="font-weight-bold text-primary display-8 col -lg-3">Gender</label>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <select class="form-control font-weight-bold" id="gender-signup" name="gender-signup">
+                                        <option value="0" selected="selected"></option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Other</option>
+                                    </select>
+                                    <small id="gender-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-3">
+                                <label for="email-signup" class="font-weight-bold text-primary display-8 col-lg-3 col-md-4 col-sm-12">Email</label>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <input type="email" class="form-control font-weight-bold" id="email-signup" aria-describedby="email-help" name="email-signup" maxlength="100" placeholder="Ex. example@example.com">
+                                    <span class="fa fa-spinner animated rotateout" id="email-load" style="display: none;"></span>
+                                    <small id="email-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mt-3">
+                                <label for="type-signup" class="font-weight-bold text-primary display-8 col-lg-3 col-md-4 col-sm-12">Type</label>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <select class="form-control font-weight-bold" id="type-signup" name="type-signup">
+                                        <option value="0" selected="selected"></option>
+                                        <option value="1">Student</option>
+                                        <option value="2">Professor</option>
+                                    </select>
+                                    <small id="type-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <label for="password-signup" class="font-weight-bold text-primary display-8 col-lg-3 col-md-4 col-sm-12">Password</label>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <input type="password" class="form-control font-weight-bold" id="password-signup" maxlength="100" name="password-signup" aria-describedby="password-help-signup">
+
+                                    <small id="password-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="re-password-signup" class="font-weight-bold text-primary display-8 col-lg-3 col-md-4 col-sm-12">Re-password</label>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <input type="password" class="form-control font-weight-bold" id="re-password-signup" maxlength="100" name="re-password-signup" aria-describedby="re-password-help-signup">
+
+                                    <small id="re-password-help-signup" class="text-danger font-weight-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <button href="Ehome.html" id="submit-signup"  class="btn btn-primary float-right round font-weight-bold text-white" disabled>Sign up</button>
+                            </div>
+                        </form>
+
+                        <div class="text-center mt-2">
+                            <span>Do you have an account? <a href="login.html" class="text-primary">Login</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script src="signup_files/jquery-3.js"></script>
+<script src="signup_files/popper.js"></script>
+<script src="signup_files/bootstrap.js"></script>
+<script src="signup_files/siginup.js"></script>
+
+
+</body>
+</html>

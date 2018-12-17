@@ -1,0 +1,25 @@
+
+
+
+.text-navy{
+    color: navy !important;
+}
+
+
+.display-7 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+.display-8 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+.display-9 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.2
+}
